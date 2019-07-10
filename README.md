@@ -21,6 +21,7 @@ Things you may want to cover:
 
 * Deployment instructio
 
+<<<<<<< Updated upstream
 ## membersテーブル
 
 |Column|Type|Options|
@@ -67,3 +68,8 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :group
+=======
+* ...
+
+
+>>>>>>> Stashed changes
