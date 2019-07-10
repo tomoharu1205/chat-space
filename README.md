@@ -36,7 +36,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false, index: true|
+|name|string|null: false, index: true|
 |email|text|
 
 ### Association
@@ -48,7 +48,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false|
+|name|string|null: false|
 
 ### Association
 - has_many :users, through: :member
