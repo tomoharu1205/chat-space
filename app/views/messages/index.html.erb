@@ -10,6 +10,7 @@
 
 
 <body>
+
 <div class='flash-box'>
   グループを作成しました
 </div>
@@ -17,30 +18,59 @@
 <div class='wrapper'>
 
   <div class='chat-side'>
-    <div class='side-header'></div>
-    <div class='groups'></div>
+    <div class='side-header'>
+      <div class="side-header-box">
+      <p class='side-header__user-name'>test-user</p>
+      <ul class="user-menu">
+        <li class='user-menu__edit-user'>
+          <i class='fa fa-edit'></i>
+        </li>
+        <li class='user-menu__new-group'>
+          <i class='fa fa-cog'>
+        </i>
+        </li>
+       </ul>
+       </div>
+    </div>
+
+    <div class='groups'>
+      <div class='group'>
+        <p class='group__group-name'>テスト</p>
+        <p class='group__latest-message'>テスト</p>
+      </div>
+    </div>
   </div>
+  
 
   <div class='chat-main'>
 
     <div class='chat-header'>
       <div class='current-group'>
+        <div class="current-group__name">
+        TEST
+        </div>
+        <div class="member-list">test
+        </div>
       </div>
+      
       <div class='main-header__edit-btn'>Edit</div>
-    </div>
+      </div>
 
     <div class='messages'>
       <div class='message'>
+        <p class='messeage-user'>test-user
+        </p>
+        <p class='message__text'>こんにちは！</p>
       </div>
     </div>
 
     <div class='form'>
       <div class='new-message'>
-        <div class="input-box">
-          <input type="text" class="form-input" placeholder="type a message">
-          <i class="far  fa-image my-big"></i>
+        <div class='input-box'>
+          <input type='text' class='form-input' placeholder='type a message'>
+          <i class='far  fa-image my-big'></i>
         </div>
-        <input type="submit" value="Send" class='new-message-input-btn'>
+        <input type='submit' value='Send' class='new-message-input-btn'>
       </div>
     </div>
 

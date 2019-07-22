@@ -13,6 +13,8 @@
 .chat-side {
   width:300px;
   height: 100vh;
+  color: white;
+  box-sizing: border-box;
 }
 
 .side-header {
@@ -21,13 +23,56 @@
   height: 100px;
   font-size:16px;
   font-weight:bold;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  position:relative;
 }
+
+.side-header-box {
+  display:flex;
+  position: absolute;
+  top:38px;
+  width: 260px;
+  justify-content: space-between;
+}
+
+.user-menu {
+  display: flex;
+}
+.side-header__user-name {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  box-sizing: border-box;
+  height:24px;
+  margin: 0px;
+  padding:0px;
+}
+
 
 .groups {
   width: 300px;
   height: calc(100vh - 100px);
   background-color: #2f3e51;
   box-sizing: border-box;
+  padding: 20px 20px 0;
+  overflow: scroll;
+}
+
+.group {
+  margin-bottom: 40px;
+  box-sizing: border-box;
+}
+
+.group__group-name{
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.group__latest-message{
+  font-size: 11px;
 }
 
 .chat-main {
@@ -42,7 +87,30 @@
   justify-content: space-between;
   border-bottom: solid 1px #eee;
   overflow: scroll;
+  position: relative;
 }
+
+.current-group {
+  box-sizing: border-box;
+  padding: 0px;
+  font-size: 20px;
+  color: #333;
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+
+.current-group__name {
+  box-sizing: border-box;
+
+}
+.member-list {
+  display: flex;
+  margin-top: 15px;
+  font-size: 12px;
+  color: #999999;
+
+}
+
 
 .main-header__edit-btn {
   height: 40px;
@@ -59,6 +127,26 @@
   height: calc(100vh - 192px - 90px);
     padding: 46px 40px;
     background-color: #fafafa;
+}
+
+.message {
+  box-sizing: border-box;
+  padding-bottom: 40px;
+  height: 77px;
+}
+
+.messeage-user {
+  display: block;
+  color: #434a54;
+  font-size: 16px;
+  font-weight: bold;
+
+}
+
+.message__text{
+  color: #434a54;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
 .form {
