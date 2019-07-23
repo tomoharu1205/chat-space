@@ -64,15 +64,13 @@
 .group {
   margin-bottom: 40px;
   box-sizing: border-box;
-}
-
-.group__group-name{
-  font-size: 15px;
-  margin-bottom: 5px;
-}
-
-.group__latest-message{
-  font-size: 11px;
+   &__group-name{
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+   &__latest-message{
+    font-size: 11px;
+  }
 }
 
 .chat-main {
@@ -133,21 +131,19 @@
   box-sizing: border-box;
   padding-bottom: 40px;
   height: 77px;
+  &-user {
+    display: block;
+    color: #434a54;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  &__text{
+    color: #434a54;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }  
 }
 
-.messeage-user {
-  display: block;
-  color: #434a54;
-  font-size: 16px;
-  font-weight: bold;
-
-}
-
-.message__text{
-  color: #434a54;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
 
 .form {
   box-sizing: border-box;
