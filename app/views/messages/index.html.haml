@@ -1,39 +1,36 @@
-!!!
-%html
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    .flash-box
-      グループを作成しました
-    .wrapper
-      .chat-side
-        .side-header
-          .side-header-box
-            %p.side-header__user-name test-user
-            %ul.user-menu
-              %li.user-menu__edit-user
-                %i.fa.fa-edit
-              %li.user-menu__new-group
-                %i.fa.fa-cog
-        .groups
-          .group
-            %p.group__group-name テスト
-            %p.group__latest-message テスト
-      .chat-main
-        .chat-header
-          .current-group
-            .current-group__name
-              TEST
-            .member-list
-              test
-          .main-header__edit-btn Edit
-        .messages
-          .message
-            %p.messeage-user
-              test-user
-            %p.message__text こんにちは！
-        .form
-          .new-message
-            .input-box
-              %input.form-input{:placeholder => "type a message", :type => "text"}/
-              %i.fa.fa-image
-            %input.new-message-input-btn{:type => "submit", :value => "Send"}/
+
+.flash-box
+  グループを作成しました
+.wrapper
+  .chat-side
+    .side-header
+      .side-header-box
+        %p.side-header__user-name test-user
+        %ul.user-menu
+          %li.user-menu__edit-user
+            %i.fa.fa-edit
+          %li.user-menu__new-group
+            %i.fa.fa-cog
+    .groups
+      .group
+        %p.group__group-name テスト
+        %p.group__latest-message テスト
+  .chat-main
+    .chat-header
+      .current-group
+        .current-group__name
+          TEST
+        .member-list
+          test
+      .main-header__edit-btn Edit
+    .messages
+      .message
+        %p.messeage-user
+          test-user
+        %p.message__text こんにちは！
+    .form
+      .new-message
+      .input-box
+        %input.form-input{:placeholder => "type a message", :type => "text"}/
+        %i.fa.fa-image
+      %input.new-message-input-btn{:type => "submit", :value => "Send"}/
