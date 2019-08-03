@@ -17,10 +17,13 @@
       .message
         %p.messeage-user
           test-user
-        %p.message__text こんにちは！
+        %p.message__text 
+          こんにちは！
     .form
-      .new-message
-      .input-box
-        %input.form-input{placeholder: "type a message", type: "text"}/
-        %i.fa.fa-image
-      %input.new-message-input-btn{type: "submit", value: "Send"}/
+      = form_for [@group, @message] do |f|
+        = fext_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mark
+          = f.label :image, class: 'form__mask__image'  do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :iamge, class: 'hidden'
+        = f.submit 'send', class: 'form__submit'
