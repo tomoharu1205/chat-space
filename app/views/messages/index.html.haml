@@ -1,36 +1,30 @@
-
-.flash-box
-  グループを作成しました
 .wrapper
-  .chat-side
-    .side-header
-      .side-header-box
-        %p.side-header__user-name test-user
-        %ul.user-menu
-          %li.user-menu__edit-user
-            %i.fa.fa-edit
-          %li.user-menu__new-group
-            %i.fa.fa-cog
-    .groups
-      .group
-        %p.group__group-name テスト
-        %p.group__latest-message テスト
-  .chat-main
-    .chat-header
-      .current-group
-        .current-group__name
-          TEST
-        .member-list
-          test
-      .main-header__edit-btn Edit
+
+  = render 'shared/side_bar'
+
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          グループ名
+        %ul.left-header__members
+          Member：
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+      .right-header
+        .right-header__button
+          Edit
     .messages
-      .message
-        %p.messeage-user
-          test-user
-        %p.message__text こんにちは！
+      = render @messages
     .form
-      .new-message
-      .input-box
-        %input.form-input{placeholder: "type a message", type: "text"}/
-        %i.fa.fa-image
-      %input.new-message-input-btn{type: "submit", value: "Send"}/
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
