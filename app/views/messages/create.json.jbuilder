@@ -1,2 +1,5 @@
-json.text  @comment.text
-json.user_id  @comment.user.id
+json.id @message.id
+json.content @message.content
+json.name @message.user.name
+json.image @message.image_url
+json.created_at @message.created_at.strftime("%Y/%m/%d %H:%M")

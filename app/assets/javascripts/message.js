@@ -1,30 +1,49 @@
 $(function(){
-  function buildHTML(comment){
-    var html = `<p>
-                  <strong>
-                    <a href=/users/${comment.user_id}>${comment.user_name}</a>
-                    ：
-                  </strong>
-                  ${comment.text}
-                </p>`
+  function buildHTML(message){
+    var insertImage = '';
+    if (message.image) {
+      insertImage = `<img src="${message.image}">`;
+    }
+    var html = `<div class="message">
+                  <div class="upper-message">
+                      <div class="upper-message__user-name">
+                        ${message.name}
+                      </div>
+                      <div class="upper-message__date">
+                        ${message.created_at}
+                      </div>
+                  </div>
+                  <div class="lower-message">
+                      <p class="lower-message__content">
+                        ${message.content}
+                      </p> 
+                        ${insertImage}
+                      
+                  </div>
+                </div>`              
     return html;
   }
-  $('#new_comment').on('submit', function(e){
+  $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
-    var href = window.location.href + '/comments'
+    var url = $(this).attr('action')
     $.ajax({
-      url: href,
+      url: url,
       type: "POST",
       data: formData,
       dataType: 'json',
       processData: false,
       contentType: false
-    })
+    }) 
+    
     .done(function(data){
       var html = buildHTML(data);
-      $('.comments').append(html)
-      $('.textbox').val('')
+      $('.messages').append(html)
+      $('#message_content').val('')
+      $('.form__submit').attr('disabled',false);
+    })
+    .fail(function() {
+      alert('メッセージの送信に失敗しました');
     })
   })
 });
