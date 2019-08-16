@@ -35,13 +35,16 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html)
-      $('#message_content').val('')
       $('.messages').animate({scrollTop:15000});
-      $('.form__submit').attr('disabled',false);
     })
     .fail(function() {
       alert('メッセージの送信に失敗しました');
-      $('.form__submit').attr('disabled',false);
     })
+
+    .always(function () {
+      $(".form__submit").removeAttr("disabled");
+      $(".new_message")[0].reset();
+    });
+
   })
 });
