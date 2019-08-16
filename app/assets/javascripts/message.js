@@ -39,7 +39,7 @@ $(function(){
       var html = buildHTML(data);
       $('.messages').append(html)
       $('#message_content').val('')
-      $('.messages').animate({scrollTop:1500});
+      $('.messages').animate({scrollTop:15000});
       $('.form__submit').attr('disabled',false);
     })
     .fail(function() {
