@@ -7,7 +7,6 @@ $(function(){
                  <p class="chat-group-user__name">${user.name}</p>
                  <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</div>
                </div>`
-    
     user_list.append(html);
   }
 
@@ -46,11 +45,12 @@ $(function(){
   });
 
   $(function() {
-    $(document).on("click",'user_search_add', function() {
+    $(document).on("click",'.user-search-add', function() {
       var name = $(this).attr("data-user-name");
+      
       var user_id = $(this).attr("data-user-id");
       $(this).parent().remove();
-      appendMember(name, user_id);
+      appendMembers(name, user_id);
     });
     $(document).on("click", '.user_search_remove', function() {
       $(this).parent().remove();
