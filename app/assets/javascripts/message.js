@@ -19,8 +19,7 @@ $(function(){
                 </div>`              
     return html;
   }
-  $('.new_message').on('submit', function(e){
-    console.log("ok1")
+  $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
@@ -34,7 +33,7 @@ $(function(){
     }) 
     
     .done(function(data){
-      console.log("ok2")
+      debugger
       var html = buildHTML(data);
       $('.messages').append(html)
       $('.messages').animate({scrollTop:15000});
