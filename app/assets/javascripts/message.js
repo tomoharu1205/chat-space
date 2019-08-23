@@ -45,6 +45,5 @@ $(function(){
       $(".form__submit").removeAttr("disabled");
       $(".new_message")[0].reset();
     });
-
   })
 });
