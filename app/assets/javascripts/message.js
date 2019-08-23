@@ -46,5 +46,19 @@ $(function(){
       $(".new_message")[0].reset();
     });
 
+    $(function() {
+      groupUrl = $(location).attr("href").match(/\/group\/d+\/messages/);
+      if (groupUrl !== null) {
+        groupId = groupUrl[0].match(/\d+/);
+        lastestMessageId = $()
+      }
+      var reloadMessages = function() {
+        last_message_id =
+        $.ajax({
+
+        })
+      }
+    });
+
   })
 });
