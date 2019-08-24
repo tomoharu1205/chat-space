@@ -23,7 +23,6 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
-    debugger;
     $.ajax({
       url: url,
       type: "POST",
@@ -34,7 +33,6 @@ $(function(){
     }) 
     
     .done(function(data){
-      debugger
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.messages').animate({scrollTop:15000});
