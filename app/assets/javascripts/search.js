@@ -48,8 +48,6 @@ $(function(){
     $(document).on("click",'.user-search-add', function() {
       var name = $(this).data("user-name");
       var user_id = $(this).data("user-id");
-      console.log(name);
-      console.log(user_id);
       $(this).parent().remove();
       appendMembers(name, user_id);
     });
