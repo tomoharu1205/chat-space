@@ -1,6 +1,7 @@
 $(function(){
   function buildHTML(message){
-    var insertImage = message.image ? `<img class="lower-message__image" src="[]_@]">` : "";
+    console.log(message);
+    var insertImage = message.image.url? `<img class="lower-message__image" src="${message.image.url}">` : "";
     var html = `<div class="message" data-id="${message.id}">
                   <div class="upper-message">
                       <div class="upper-message__user-name">
@@ -16,7 +17,9 @@ $(function(){
                       </p> 
                         ${insertImage} 
                   </div>
-                </div>`              
+                </div>`  
+                
+
     return html;
   }
   $('#new_message').on('submit', function(e){
@@ -67,11 +70,12 @@ $(function(){
       messages.forEach(function(message) {
         if (message.id > last_message_id ) {
           insertHTML = buildHTML(message);
+          $('.messages').append(insertHTML);
         }
       });
       //メッセージを追加
-      $('.messages').append(insertHTML);
-      $('.messages').animate({scrollTop:15000000});
+      
+      $('.messages').animate({scrollTop:15000});
     })
     .fail(function() {
       alert("メッセージの自動更新ができませんでした");
