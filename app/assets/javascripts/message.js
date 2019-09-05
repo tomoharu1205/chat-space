@@ -63,6 +63,7 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
+      console.log("ooook");
       //追加するHTMLの入れ物を作る
       var insertHTML = '';
       //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
@@ -81,5 +82,5 @@ $(function(){
     });
     
   };
-  setInterval(reloadMessages, 5000);
+  setInterval(reloadMessages, 50000);
 });
