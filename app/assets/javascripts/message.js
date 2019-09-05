@@ -1,5 +1,5 @@
 $(function(){
-  function buildHTML(message)
+  function buildHTML(message) {
     var insertImage = message.image.url? `<img class="lower-message__image" src="${message.image.url}">` : "";
     var html = `<div class="message" data-id="${message.id}">
                   <div class="upper-message">
