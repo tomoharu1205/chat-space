@@ -1,7 +1,6 @@
-  
 $(document).on('turbolinks:load', function() {
+  
   function buildHTML(message) {
-    console.log("ok");
     var insertImage = message.image.url? `<img class="lower-message__image" src="${message.image.url}">` : "";
     var html = `<div class="message" data-id="${message.id}">
                   <div class="upper-message">
@@ -53,6 +52,7 @@ $(document).on('turbolinks:load', function() {
   });
 
   var reloadMessages = function() {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     last_message_id = $(".message:last").data("id");
     $.ajax({
@@ -81,6 +81,7 @@ $(document).on('turbolinks:load', function() {
     .fail(function() {
       alert("メッセージの自動更新ができませんでした");
     });
+  }
     
   };
   setInterval(reloadMessages, 5000);
