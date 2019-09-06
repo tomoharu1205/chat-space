@@ -81,5 +81,5 @@ $(function(){
     });
     
   };
-  setInterval(reloadMessages, 50000);
+  setInterval(reloadMessages, 5000);
 });
