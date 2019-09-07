@@ -1,6 +1,7 @@
 $(document).on('turbolinks:load', function() {
   
   function buildHTML(message) {
+    console.log("ok");
     var insertImage = message.image.url? `<img class="lower-message__image" src="${message.image.url}">` : "";
     var html = `<div class="message" data-id="${message.id}">
                   <div class="upper-message">
