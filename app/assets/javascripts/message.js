@@ -81,7 +81,7 @@ $(document).on('turbolinks:load', function() {
     .fail(function() {
       alert("メッセージの自動更新ができませんでした");
     });
-  }
+   }
     
   };
   setInterval(reloadMessages, 5000);
