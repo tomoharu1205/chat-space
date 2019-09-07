@@ -47,8 +47,9 @@ set :linked_files, %w{ config/secrets.yml }
 
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
-  task :restart do
-    invoke 'unicorn:restart'
+  task :restart_unicorn_twice? do
+    invoke 'deploy:restart_unicorn'
+    invoke 'deploy:restart_unicorn'
   end
 
   desc 'upload secrets.yml'
